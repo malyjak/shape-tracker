@@ -101,9 +101,7 @@ def process_video_file(sample: Path, logger: Logger) -> None:
         # Incorrect frame read.
         if not ret:
             logger.warning('Cannot receive frame - stream end?')
-            logger.info(f'Detected {len(data_rectangles)} distinct colors of \
-                        rectangles and {len(data_circles)} distinct colors of \
-                        circles')
+            logger.info(f'Detected {len(data_rectangles)} distinct colors of rectangles and {len(data_circles)} distinct colors of circles')
             cv.waitKey(0)
             break
 
@@ -214,8 +212,7 @@ def process_video_file(sample: Path, logger: Logger) -> None:
 
                 cnt_circles = cnt_circles + 1
 
-        logger.debug(f'Detected {cnt_rectangles} rectangles and {cnt_circles} \
-                     circles in this frame')
+        logger.debug(f'Detected {cnt_rectangles} rectangles and {cnt_circles} circles in this frame')
 
         # Display the result.
         cv.imshow('frame', frame)
@@ -276,7 +273,7 @@ if __name__ == '__main__':
                         help='level of verbosity (0 = NOTSET, 1 = DEBUG, \
                               2 = INFO, 3 = WARNMING, 4 = ERROR, 5 = CRITICAL)',
                         type=int,
-                        default=3,
+                        default=2,
                         choices=range(0, 6))
     args = parser.parse_args()
 
