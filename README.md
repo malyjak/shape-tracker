@@ -9,15 +9,19 @@ A simple shape tracker written in python as an interview assignment. Currently o
 ## Usage
 ```
 poetry install
-poetry run python main.py
+poetry run python app/main.py
 ```
 
+Once the video ends, pressing any key confirms the termination of program.
+
+Trajectories will be saved in `app/results` folder in `.png` format.
+
 ### Using custom vido samples
-Simply put your video to the `samples` folder and run the script as:
+Simply put your video to the `app/samples` folder and run the script as:
 ```
 poetry run python main.py -s your_sample_video.mp4
 ```
 
-If circles are not being detected, modify parameters of HoughCircles function.
+If circles are not being detected, modify parameters of HoughCircles function in `tracker.py` file.
 
 Note: There is a check in the code for `.mp4` format. Disable it if you want to use different video formats.
