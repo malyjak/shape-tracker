@@ -19,7 +19,7 @@ Trajectories will be saved in `app/results` folder in `.png` format.
 ### Using custom vido samples
 Simply put your video to the `app/samples` folder and run the script as:
 ```
-poetry run python main.py -s your_sample_video.mp4
+poetry run python app/main.py -s your_sample_video.mp4
 ```
 
 If circles are not being detected, modify parameters of HoughCircles function in `tracker.py` file.

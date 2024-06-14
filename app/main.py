@@ -57,7 +57,7 @@ if __name__ == '__main__':
     parser.add_argument('-s',
                         '--sample',
                         help='name of sample video file',
-                        default='luxonis_task_video.mp4')
+                        default='sample_video.mp4')
     parser.add_argument('-l',
                         '--log',
                         help='name of log file',

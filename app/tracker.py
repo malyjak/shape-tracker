@@ -17,8 +17,12 @@ from helpers import DataPoint, rgb_to_hex
 # Hough circles algorithm params - modify this to boost circle detection.
 # param1: the higher threshold for the edge detection and divided by 2 is the lower threshold.
 # param2: accumulator threshold - the lower the value the more circles will be returned.
+# minRadius: the minimum radius of circle to be detected
+# maxRadius: the maximum radius of circle to be detected
 HOUGH_PARAM_1 = 100
 HOUGH_PARAM_2 = 20
+HOUGH_MIN_RADIUS = 20
+HOUGH_MAX_RADIUS = 70
 
 # Element colors.
 BORDER_COLOR = (0, 255, 0)
@@ -173,8 +177,8 @@ class ShapeTracker():
 
             # Compute circles.
             circles = cv.HoughCircles(blurred, method=cv.HOUGH_GRADIENT, dp=1, minDist=20,
-                                      param1=HOUGH_PARAM_1, param2=HOUGH_PARAM_2, minRadius=20,
-                                      maxRadius=70)
+                                      param1=HOUGH_PARAM_1, param2=HOUGH_PARAM_2,
+                                      minRadius=HOUGH_MIN_RADIUS, maxRadius=HOUGH_MAX_RADIUS)
             if circles is not None:
                 circles_np = np.uint16(np.around(circles))
                 for pt in circles_np[0, :]:
